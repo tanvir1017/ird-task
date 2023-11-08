@@ -66,6 +66,19 @@
   }
 }
 
+@layer utilities {
+  #SCROLLER::-webkit-scrollbar {
+    width: 0.3em;
+  }
+
+  #SCROLLER::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  #SCROLLER::-webkit-scrollbar-thumb {
+    background: #a8a3a3;
+    border-radius: 100vh;
+  }
+}
 @layer base {
   * {
     @apply border-border;

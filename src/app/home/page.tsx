@@ -5,13 +5,15 @@ import RightSidebar from "@/components/dashboard/home/right-sidebar";
 const Home = () => {
   return (
     <div className="grid grid-cols-12 gap-1.5">
-      <div className="col-span-3 bg-white rounded-[10px] p-[15px] border h-[90%] overflow-y-auto">
-        <LeftSidebar />
+      <div className="2xl:col-span-3 lg:col-span-4 col-span-3  bg-white rounded-[10px] p-[15px] border h-[90%]  overflow-hidden">
+        <div id="SCROLLER" className=" p-3 h-[100%] rounded-md overflow-y-auto">
+          <LeftSidebar />
+        </div>
       </div>
-      <div className="col-span-7 bg-white rounded-[15px] p-2 border">
+      <div className="2xl:col-span-7 lg:col-span-8  bg-white rounded-[15px] p-2 border">
         <MainContent />
       </div>
-      <div className="col-span-2 bg-white rounded-[15px] p-2 border">
+      <div className="2xl:block col-span-2 lg:hidden bg-white rounded-[15px] p-2 border">
         <RightSidebar />
       </div>
     </div>

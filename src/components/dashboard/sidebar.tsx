@@ -5,16 +5,18 @@ import { usePathname } from "next/navigation";
 
 export function Sidebar() {
   const pathName = usePathname();
+  console.log("🚀 ~ file: sidebar.tsx:8 ~ Sidebar ~ pathName:", pathName);
 
   return (
     <aside className="flex h-screen w-full flex-col items-center justify-center overflow-y-auto  bg-white py-8 ml-2">
       <nav className="flex flex-col items-center  space-y-6">
         <Link
-          href="/home"
+          href="/"
           className={cn(
-            "rounded-lg text-gray-700 transition-colors duration-200 bg-gray-100 hover:bg-gray-200 focus:outline-none h-9 w-9 leading-9 text-center",
+            "rounded-lg text-gray-700 transition-colors duration-200 bg-gray-100 focus:outline-none h-9 w-9 leading-9 text-center",
             {
-              ["bg-[#e655271a]"]: pathName === "/home",
+              ["bg-[#e655271a]"]: pathName === "/",
+              ["hover:bg-gray-200 "]: pathName !== "/",
             }
           )}
         >
@@ -30,15 +32,13 @@ export function Sidebar() {
               <path
                 id="name"
                 d="M14.25 15.584C13.5171 16.1545 12.5544 16.5007 11.5 16.5007C10.4457 16.5007 9.48289 16.1545 8.75 15.584"
-                stroke={pathName === "/home" ? "#E65527" : "#000"}
+                stroke={pathName === "/" ? "#E65527" : "#000"}
                 strokeWidth="1.5"
               />
               <path
                 id="name_2"
                 d="M2.65609 12.113C2.33249 10.0072 2.17069 8.95431 2.56881 8.02092C2.96692 7.08751 3.85018 6.44888 5.6167 5.17162L6.93656 4.21732C9.13408 2.62843 10.2328 1.83398 11.5007 1.83398C12.7685 1.83398 13.8672 2.62843 16.0647 4.21732L17.3846 5.17162C19.1512 6.44888 20.0344 7.08751 20.4325 8.02092C20.8306 8.95431 20.6688 10.0072 20.3452 12.113L20.0693 13.9087C19.6105 16.8938 19.3811 18.3864 18.3106 19.2769C17.24 20.1673 15.6749 20.1673 12.5446 20.1673H10.4568C7.32645 20.1673 5.76132 20.1673 4.69073 19.2769C3.62015 18.3864 3.39078 16.8938 2.93205 13.9087L2.65609 12.113Z"
-                // stroke="#E65527"
-                stroke={pathName === "/home" ? "#E65527" : "#000"}
-                // stroke="#000"
+                stroke={pathName === "/" ? "#E65527" : "#000"}
                 strokeWidth="1.5"
               />
             </g>
@@ -66,33 +66,33 @@ export function Sidebar() {
                 id="name"
                 d="M16.2708 10.1257C18.4224 10.1257 20.1667 8.38143 20.1667 6.22982C20.1667 4.07821 18.4224 2.33398 16.2708 2.33398C14.1192 2.33398 12.375 4.07821 12.375 6.22982C12.375 8.38143 14.1192 10.1257 16.2708 10.1257Z"
                 stroke="#101010"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="name_2"
                 d="M5.72982 10.1257C7.88143 10.1257 9.62565 8.38143 9.62565 6.22982C9.62565 4.07821 7.88143 2.33398 5.72982 2.33398C3.57821 2.33398 1.83398 4.07821 1.83398 6.22982C1.83398 8.38143 3.57821 10.1257 5.72982 10.1257Z"
                 stroke="#101010"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="name_3"
                 d="M16.2708 20.6667C18.4224 20.6667 20.1667 18.9224 20.1667 16.7708C20.1667 14.6192 18.4224 12.875 16.2708 12.875C14.1192 12.875 12.375 14.6192 12.375 16.7708C12.375 18.9224 14.1192 20.6667 16.2708 20.6667Z"
                 stroke="#101010"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="name_4"
                 d="M5.72982 20.6667C7.88143 20.6667 9.62565 18.9224 9.62565 16.7708C9.62565 14.6192 7.88143 12.875 5.72982 12.875C3.57821 12.875 1.83398 14.6192 1.83398 16.7708C1.83398 18.9224 3.57821 20.6667 5.72982 20.6667Z"
                 stroke="#101010"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
           </svg>
@@ -145,16 +145,16 @@ export function Sidebar() {
                 id="name"
                 d="M16.2244 19.5568C15.15 19.7077 13.749 19.7077 11.8702 19.7077H10.1285C6.43388 19.7077 4.58657 19.7077 3.43879 18.5599C2.29102 17.4122 2.29102 15.5648 2.29102 11.8702V10.1285C2.29102 6.43388 2.29102 4.58657 3.43879 3.43879C4.58657 2.29102 6.43388 2.29102 10.1285 2.29102H11.8702C15.5648 2.29102 17.4122 2.29102 18.5599 3.43879C19.7077 4.58657 19.7077 6.43388 19.7077 10.1285V11.8702C19.7077 12.9777 19.7077 13.9192 19.6768 14.7257C19.6519 15.3719 19.6396 15.6952 19.3948 15.8159C19.1501 15.9366 18.8764 15.7429 18.3288 15.3555L17.0952 14.4827"
                 stroke="#101010"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="name_2"
                 d="M13.7005 11.3612C13.5385 11.9357 12.7728 12.3417 11.2416 13.1537C9.76132 13.9385 9.0212 14.3311 8.42474 14.1733C8.17814 14.108 7.95347 13.9842 7.77226 13.8135C7.33398 13.4008 7.33398 12.6003 7.33398 10.9993C7.33398 9.39839 7.33398 8.59785 7.77226 8.18513C7.95347 8.01451 8.17814 7.89064 8.42474 7.82542C9.0212 7.66767 9.76132 8.06012 11.2416 8.84502C12.7728 9.65698 13.5385 10.063 13.7005 10.6374C13.7673 10.8746 13.7673 11.1241 13.7005 11.3612Z"
                 stroke="#101010"
-                stroke-width="1.5"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinejoin="round"
               />
             </g>
           </svg>
@@ -181,73 +181,73 @@ export function Sidebar() {
                 id="name"
                 d="M10.9962 16.5H11.0037"
                 stroke="#101010"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="name_2"
                 d="M16.4998 16.5H16.5073"
                 stroke="#101010"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="name_3"
                 d="M5.49982 16.5H5.5073"
                 stroke="#101010"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="name_4"
                 d="M10.9962 11H11.0037"
                 stroke="#101010"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="name_5"
                 d="M10.9998 5.5H11.0073"
                 stroke="#101010"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="name_6"
                 d="M16.4998 11H16.5073"
                 stroke="#101010"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="name_7"
                 d="M16.4998 5.5H16.5073"
                 stroke="#101010"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="name_8"
                 d="M5.49982 11H5.5073"
                 stroke="#101010"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="name_9"
                 d="M5.49982 5.5H5.5073"
                 stroke="#101010"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
           </svg>
