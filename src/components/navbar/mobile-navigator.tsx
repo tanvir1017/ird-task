@@ -2,13 +2,11 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-export function Sidebar() {
+const MobileNavigator = () => {
   const pathName = usePathname();
-
   return (
-    <aside className="flex h-screen w-full flex-col items-center justify-center overflow-y-auto  bg-white py-8 ml-2">
-      <nav className="flex flex-col items-center  space-y-6">
+    <div className="md:hidden block  bg-[#EEF0F2]">
+      <nav className="flex items-center gap-9 justify-center bg-white border py-2.5  rounded-t-3xl">
         <Link
           href="/"
           className={cn(
@@ -252,6 +250,8 @@ export function Sidebar() {
           </svg>
         </Link>
       </nav>
-    </aside>
+    </div>
   );
-}
+};
+
+export default MobileNavigator;

@@ -1,6 +1,7 @@
 import { Sidebar } from "@/components/dashboard/sidebar";
+import MobileNavigator from "@/components/navbar/mobile-navigator";
+import MobileViewNavbar from "@/components/navbar/mobile-view";
 import Navbar from "@/components/navbar/navigation";
-import { ThemeProvider } from "@/shadcn/ui/theme-provider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -20,25 +21,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider
+        {/* <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >
-          <Navbar />
-          <div className="app">
-            <div className="flex">
-              <div className="w-[5%]">
-                <Sidebar />
-              </div>
-              <div className="w-[1%]"></div>
-              <div className="bg-gray-100 rounded-l-xl p-2 w-[94%]">
-                {children}
-              </div>
+        > */}
+        <Navbar />
+        <MobileViewNavbar />
+
+        <div className="app">
+          <div className="flex">
+            <div className="md:w-[5%] md:block hidden">
+              <Sidebar />
+            </div>
+            <div className="w-[1%] md:block hidden"></div>
+            <div className="bg-gray-100 md:rounded-l-xl rounded-none px-3 md:w-[94%] overflow-hidden">
+              {children}
             </div>
           </div>
-        </ThemeProvider>
+        </div>
+        {/* </ThemeProvider> */}
+
+        <MobileNavigator />
       </body>
     </html>
   );

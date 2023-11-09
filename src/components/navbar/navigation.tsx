@@ -7,7 +7,7 @@ const Navbar = () => {
   const { setTheme, theme } = useTheme();
 
   return (
-    <header className="bg-white">
+    <header className="bg-white md:block hidden">
       <nav className="py-3 pl-[26px] pr-[15px] flex items-center justify-between">
         <div>
           <Image
