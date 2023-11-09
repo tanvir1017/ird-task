@@ -36,7 +36,7 @@ export default function RootLayout({
               <Sidebar />
             </div>
             <div className="w-[1%] md:block hidden"></div>
-            <div className="bg-gray-100 md:rounded-l-xl rounded-none px-3 md:w-[94%] overflow-hidden">
+            <div className="bg-gray-100 md:rounded-l-xl rounded-none py-3 px-3  md:w-[94%] overflow-clip">
               {children}
             </div>
           </div>

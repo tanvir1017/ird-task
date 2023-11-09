@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 const MobileNavigator = () => {
   const pathName = usePathname();
   return (
-    <div className="md:hidden block  bg-[#EEF0F2]">
+    <div className="md:hidden block  bg-[#EEF0F2] bg-transparent z-10 sticky bottom-0">
       <nav className="flex items-center gap-9 justify-center bg-white border py-2.5  rounded-t-3xl">
         <Link
           href="/"

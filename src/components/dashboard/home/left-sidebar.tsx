@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { Button } from "@/shadcn/ui/button";
 import Image from "next/image";
 
@@ -8,7 +9,7 @@ type fruitsListDataType = {
   subtitle: string;
   color: string;
 };
-const fruitsListData: fruitsListDataType[] = [
+export const fruitsListData: fruitsListDataType[] = [
   {
     id: 1,
     image: "/assets/fruits/orange.png",
@@ -84,7 +85,7 @@ function LeftSidebar() {
       <div className="relative max-w-full mt-4">
         <input
           type="text"
-          className="w-full border px-2 py-2.5 rounded-lg  focus:outline-none ring-1 ring-gray-200"
+          className="w-full border px-2 py-2.5 rounded-lg  focus:outline-none ring-1 ring-gray-200 placeholder:text-sm"
           placeholder="Search by Fruits Name"
         />
         <div className="absolute top-[2.5px] right-[2.5px]">
@@ -120,7 +121,12 @@ function LeftSidebar() {
         {/* fruits list section card start from here */}
         <div className="">
           {fruitsListData.map((fruit) => (
-            <div key={fruit.id} className="flex items-center mt-7">
+            <div
+              key={fruit.id}
+              className={cn("flex items-center mt-2 py-4 px-2.5", {
+                ["border-[#E55527] border-2  rounded-xl"]: fruit.id === 1,
+              })}
+            >
               <div
                 className="w-12 h-12  rotate-45 rounded-xl col-span-3 relative"
                 style={{ background: `${fruit.color}` }}
